@@ -11,10 +11,10 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
-        app:checkedColor="#ff0000"
+        app:checkedColor="#DE383D"
         app:cirRadius="15dp"
-        app:defaultColor="#999999"
-        app:durationTime="500"
+        app:defaultColor="#627383"
+        app:durationTime="600"
         app:unlike_style="NORMAL" />
 
     <czh.library.LikeView
@@ -22,10 +22,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        app:checkedColor="#ff0000"
+        app:checkedColor="#DE383D"
         app:cirRadius="20dp"
-        app:defaultColor="#999999"
-        app:durationTime="500"
+        app:defaultColor="#627383"
+        app:durationTime="600"
         app:unlike_style="BROKEN" />
 
     <czh.library.LikeView
@@ -35,10 +35,10 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="100dp"
-        app:checkedColor="#ff0000"
+        app:checkedColor="#DE383D"
         app:cirRadius="25dp"
-        app:defaultColor="#999999"
-        app:durationTime="500"
+        app:defaultColor="#627383"
+        app:durationTime="600"
         app:unlike_style="SHRINK" />
 
 </RelativeLayout>
