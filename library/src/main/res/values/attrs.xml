@@ -9,7 +9,7 @@
         <attr name="defaultColor" />
         <attr name="checkedColor" />
         <attr name="cirRadius" />
-        <attr name="cycleTime" />
+        <attr name="durationTime" />
         <attr name="unlike_style" />
 
     </declare-styleable>

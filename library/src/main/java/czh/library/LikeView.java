@@ -143,7 +143,7 @@ public class LikeView extends View implements Checkable {
         TypedArray array = context.getTheme().obtainStyledAttributes(attrs, R.styleable.LikeView,
                 defStyleAttr, 0);
         mRadius = array.getDimension(R.styleable.LikeView_cirRadius, dp2px(10));
-        mCycleTime = array.getInt(R.styleable.LikeView_cycleTime, 600);
+        mCycleTime = array.getInt(R.styleable.LikeView_durationTime, 600);
         mDefaultColor = array.getColor(R.styleable.LikeView_defaultColor, DEFAULT_COLOR);
         mCheckedColor = array.getColor(R.styleable.LikeView_checkedColor, CHECKED_CLOLOR);
         mUnLikeType = array.getInt(R.styleable.LikeView_unlike_style, NORMAL);
@@ -207,7 +207,7 @@ public class LikeView extends View implements Checkable {
     }
 
 
-    //绘制心形
+    //绘制裂开的线
     private void drawBroken(Canvas canvas) {
         if (mAnimatedBrokenValue > 0 && mAnimatedBrokenValue <= 600) {
             drawHeart(canvas, (int) mRadius, mCheckedColor);
@@ -246,6 +246,7 @@ public class LikeView extends View implements Checkable {
 
     }
 
+    //绘制两边的裂开的心桃
     private void drawBrokenHeart(Canvas canvas) {
         float Offset;
         if (mAnimatedBrokenValue > 600 && mAnimatedBrokenValue <= 750) {
