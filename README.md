@@ -23,10 +23,10 @@ in xml :
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        app:checkedColor="#ff0000"
+        app:checkedColor="#DE383D"
         app:cirRadius="20dp"
-        app:defaultColor="#999999"
-        app:durationTime="500"
+        app:defaultColor="#627383"
+        app:durationTime="600"
         app:unlike_style="BROKEN" />
 		
 ```
