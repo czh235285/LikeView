@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <czh.library.LikeView
+        android:id="@+id/lv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        app:cirRadius="15dp"
+        app:cycleTime="500"
+        app:defaultColor="#999"
+        app:unlike_style="NORMAL" />
+
+    <czh.library.LikeView
+        android:id="@+id/lv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        app:cirRadius="20dp"
+        app:cycleTime="500"
+        app:defaultColor="#999"
+        app:unlike_style="BROKEN" />
+
+    <czh.library.LikeView
+        android:id="@+id/lv3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="100dp"
+        app:cirRadius="25dp"
+        app:cycleTime="500"
+        app:defaultColor="#999"
+        app:unlike_style="SHRINK" />
+
+</RelativeLayout>
