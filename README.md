@@ -1,7 +1,11 @@
 ## LikeView
 
 自定义点赞View，仿Twitter点赞，加入了两种取消点赞动画（心碎效果\旋转缩小效果）
+
+
 ![](1.gif)
+
+
 use Gradle:
 
 ```
