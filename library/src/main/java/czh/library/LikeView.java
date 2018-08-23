@@ -700,7 +700,7 @@ public class LikeView extends View implements Checkable {
     /**
      * 选择/取消选择
      */
-    private void selectLike(boolean isSetChecked) {
+    public void selectLike(boolean isSetChecked) {
         if (animatorTime != null && animatorTime.isRunning()) {
             return;
         }
