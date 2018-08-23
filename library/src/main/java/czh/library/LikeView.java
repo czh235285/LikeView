@@ -22,10 +22,50 @@ import android.widget.Checkable;
  */
 
 public class LikeView extends View implements Checkable {
+    public int getmDefaultColor() {
+        return mDefaultColor;
+    }
 
-    private final int mDefaultColor;
-    private final int mCheckedColor;
-    private final int mUnLikeType;
+    public void setmDefaultColor(int mDefaultColor) {
+        this.mDefaultColor = mDefaultColor;
+    }
+
+    public int getmCheckedColor() {
+        return mCheckedColor;
+    }
+
+    public void setmCheckedColor(int mCheckedColor) {
+        this.mCheckedColor = mCheckedColor;
+    }
+
+    public int getmUnLikeType() {
+        return mUnLikeType;
+    }
+
+    public void setmUnLikeType(int mUnLikeType) {
+        this.mUnLikeType = mUnLikeType;
+    }
+
+    public float getmRadius() {
+        return mRadius;
+    }
+
+    public void setmRadius(float mRadius) {
+        this.mRadius = mRadius;
+    }
+
+    public int getmCycleTime() {
+        return mCycleTime;
+    }
+
+    public void setmCycleTime(int mCycleTime) {
+        this.mCycleTime = mCycleTime;
+    }
+
+    private int mDefaultColor;
+    private int mCheckedColor;
+    private int mUnLikeType;
+
     private final int NORMAL = 0;
     private final int SHRINK = 1;
     private final int BROKEN = 2;
