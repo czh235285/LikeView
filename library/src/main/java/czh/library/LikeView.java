@@ -65,6 +65,11 @@ public class LikeView extends View implements Checkable {
     private int mDefaultColor;
     private int mCheckedColor;
     private int mUnLikeType;
+    private boolean isFill = true;
+
+    public void setIsFill(boolean isFill) {
+        this.isFill = isFill;
+    }
 
     private final int NORMAL = 0;
     private final int SHRINK = 1;
@@ -199,6 +204,7 @@ public class LikeView extends View implements Checkable {
         mPaintBrokenLine.setAntiAlias(true);
         mPaintBrokenLine.setStyle(Paint.Style.STROKE);
 
+
     }
 
     @Override
@@ -234,9 +240,14 @@ public class LikeView extends View implements Checkable {
     //绘制心形
     private void drawHeart(Canvas canvas, int radius, int color) {
         initControlPoints(radius);
+        if (!isFill && !isChecked) {
+            mPaint.setStyle(Paint.Style.STROKE);
+            mPaint.setStrokeWidth(3);
+        } else {
+            mPaint.setStyle(Paint.Style.FILL);
+        }
         mPaint.setColor(color);
         mPaint.setAntiAlias(true);
-        mPaint.setStyle(Paint.Style.FILL);
         Path path = new Path();
         path.moveTo(tPointB.x, tPointB.y);
         path.cubicTo(tPointC.x, tPointC.y, rPointA.x, rPointA.y, rPointB.x, rPointB.y);
@@ -244,6 +255,7 @@ public class LikeView extends View implements Checkable {
         path.cubicTo(bPointA.x, bPointA.y, lPointC.x, lPointC.y, lPointB.x, lPointB.y);
         path.cubicTo(lPointA.x, lPointA.y, tPointA.x, tPointA.y, tPointB.x, tPointB.y);
         canvas.drawPath(path, mPaint);
+        mPaint.setStyle(Paint.Style.FILL);
     }
 
 
@@ -344,7 +356,12 @@ public class LikeView extends View implements Checkable {
         mPaintBrokenLine.setStyle(Paint.Style.STROKE);
         mPaint.setColor(mDefaultColor);
         mPaint.setAntiAlias(true);
-        mPaint.setStyle(Paint.Style.FILL);
+        if (!isFill && !isChecked) {
+            mPaint.setStyle(Paint.Style.STROKE);
+            mPaint.setStrokeWidth(3);
+        } else {
+            mPaint.setStyle(Paint.Style.FILL);
+        }
         Path path = new Path();
         path.moveTo(tPointB.x, tPointB.y);
         path.cubicTo(tPointC.x, tPointC.y, rPointA.x, rPointA.y, rPointB.x, rPointB.y);
@@ -414,11 +431,11 @@ public class LikeView extends View implements Checkable {
 
         mPaint.setStyle(Paint.Style.FILL);
         for (int i = 0; i < 7; i++) {
-            canvas.drawCircle((float) (rDotS * Math.sin(angleA)), (float) (rDotS * Math.cos
-                    (angleA)), dotR, mPaint);
+            canvas.drawCircle((float) (rDotS * Math.sin(angleA)),
+                    (float) (rDotS * Math.cos(angleA)), dotR, mPaint);
             angleA += 2 * Math.PI / 7;
-            canvas.drawCircle((float) (rDotL * Math.sin(angleB)), (float) (rDotL * Math.cos
-                    (angleB)), dotR, mPaint);
+            canvas.drawCircle((float) (rDotL * Math.sin(angleB)),
+                    (float) (rDotL * Math.cos(angleB)), dotR, mPaint);
             angleB += 2 * Math.PI / 7;
         }
         mCurrentRadius = (int) (mRadius / 3 + offL * 4);
@@ -455,15 +472,15 @@ public class LikeView extends View implements Checkable {
 
         mPaint.setAlpha((int) (255 * (1 - mCurrentPercent)));//圆点逐渐透明
         dotRS = dotR * (1 - mCurrentPercent);
-        dotRL = (dotR * (1 - mCurrentPercent) * 4) > dotR ? dotR : (dotR * (1 - mCurrentPercent)
-                * 3);
+        dotRL = (dotR * (1 - mCurrentPercent) * 4) > dotR ? dotR :
+                (dotR * (1 - mCurrentPercent) * 3);
         for (int i = 0; i < 7; i++) {
             mPaint.setColor(dotColors[i]);
-            canvas.drawCircle((float) (rDotS * Math.sin(angleA)), (float) (rDotS * Math.cos
-                    (angleA)), dotRS, mPaint);
+            canvas.drawCircle((float) (rDotS * Math.sin(angleA)),
+                    (float) (rDotS * Math.cos(angleA)), dotRS, mPaint);
             angleA += 2 * Math.PI / 7;
-            canvas.drawCircle((float) (rDotL * Math.sin(angleB)), (float) (rDotL * Math.cos
-                    (angleB)), dotRL, mPaint);
+            canvas.drawCircle((float) (rDotL * Math.sin(angleB)),
+                    (float) (rDotL * Math.cos(angleB)), dotRL, mPaint);
             angleB += 2 * Math.PI / 7;
         }
 
@@ -692,8 +709,8 @@ public class LikeView extends View implements Checkable {
     }
 
     private float dp2px(int value) {
-        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, value, getResources()
-                .getDisplayMetrics());
+        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, value,
+                getResources().getDisplayMetrics());
     }
 
 
